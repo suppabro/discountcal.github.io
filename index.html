@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discount Calculator</title>
+</head>
+<body>
+    <h1>Discount Calculator</h1>
+    <label for="original-price">Original Price:</label>
+    <input type="number" id="original-price" placeholder="Enter the original price"><br>
+
+    <label for="discount-percentage">Discount Percentage:</label>
+    <input type="number" id="discount-percentage" placeholder="Enter the discount percentage"><br>
+
+    <button onclick="calculateDiscount()">Calculate</button><br>
+
+    <label for="final-price">Final Price after Discount:</label>
+    <input type="text" id="final-price" readonly><br>
+
+    <script>
+        function calculateDiscount() {
+            const originalPrice = parseFloat(document.getElementById("original-price").value);
+            const discountPercentage = parseFloat(document.getElementById("discount-percentage").value);
+            const discountAmount = originalPrice * (discountPercentage / 100);
+            const finalPrice = originalPrice - discountAmount;
+            document.getElementById("final-price").value = finalPrice.toFixed(2);
+        }
+    </script>
+</body>
+</html>
